@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IGDM Turbo</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1><span class="igdm-text">IGDM</span> <span class="turbo-text">TURBO</span></h1>
+      <div class="status-indicator">
+        <span class="status-dot"></span>
+        <span id="status-text">Ready</span>
+      </div>
+    </div>
+
+    <div class="nav-bar">
+      <a href="#messages" id="messages-tab-link" class="nav-link active">Messages</a>
+      <a href="#setup" id="setup-tab-link" class="nav-link">Setup</a>
+    </div>
+
+    <div id="messages-panel" class="panel active">
+      <div class="section">
+        <h2>Message Settings</h2>
+        <div id="free-trial-banner" class="free-trial-banner">
+          <p>Free Trial: <span id="free-dm-count">0</span>/5 DMs</p>
+        </div>
+        <div class="input-group">
+          <label for="usernameQueue">Usernames (one per line)</label>
+          <textarea id="usernameQueue" placeholder="Enter usernames..."></textarea>
+        </div>
+        <div class="input-group">
+          <label for="messageTemplate">Message Template</label>
+          <textarea id="messageTemplate" placeholder="Enter your message..."></textarea>
+        </div>
+        <div class="queue-stats">
+          <div>Total: <span id="total-count">0</span></div>
+          <div>Processed: <span id="processed-count">0</span></div>
+          <div>Remaining: <span id="remaining-count">0</span></div>
+        </div>
+        <div class="controls">
+          <button id="startProcess" class="action-btn">Start Processing</button>
+          <button id="pauseProcess" class="action-btn" disabled>Pause</button>
+          <button id="resetQueue" class="action-btn danger">Reset Queue</button>
+        </div>
+        <div class="feedback" style="text-align: center; margin-top: 16px; font-size: 13px;">
+          <p>Send DMs close clients</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="setup-panel" class="panel">
+      <div class="section">
+        <h2>Element Selectors</h2>
+        <div class="input-group">
+          <label for="messageButtonSelector">Message Button Selector</label>
+          <input type="text" id="messageButtonSelector" placeholder="Enter message button class...">
+        </div>
+        <div class="input-group">
+          <label for="textInputSelector">Text Input Field Selector</label>
+          <input type="text" id="textInputSelector" placeholder="Enter text input class...">
+        </div>
+        <div class="input-group">
+          <label for="sendButtonSelector">Send Button Selector</label>
+          <input type="text" id="sendButtonSelector" placeholder="Enter send button class...">
+        </div>
+        <div class="button-group">
+          <button id="saveSelectors" class="primary-btn">Save Selectors</button>
+          <a href="https://youtu.be/v8xjwrSUTrE" target="_blank" class="tutorial-btn">Watch Tutorial</a>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Timing Settings</h2>
+        <div class="input-group">
+          <label for="messageDelay">Message Delay (seconds)</label>
+          <input type="number" id="messageDelay" min="1" max="60" value="5">
+        </div>
+        <div class="input-group">
+          <label for="processingDelay">Processing Delay (seconds)</label>
+          <input type="number" id="processingDelay" min="1" max="60" value="5">
+        </div>
+        <button id="saveTimings" class="primary-btn">Save Timings</button>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div id="notification" class="notification hidden"></div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
