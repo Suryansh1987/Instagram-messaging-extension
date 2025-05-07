@@ -1,4 +1,4 @@
-// IGDM Turbo content script
+// TNM UI content script
 
 // State to track processing on this page
 let pageState = {
@@ -180,4 +180,4 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   return true;
 });
 
-console.log("IGDM Turbo content script loaded");
+console.log("TNM UI content script loaded");
